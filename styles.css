@@ -861,3 +861,56 @@ body {
 .villain-card:hover .card-image-credit {
     opacity: 0;
 }
+
+.music-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #dc2626, #7c3aed);
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.music-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(220, 38, 38, 0.6);
+    background: linear-gradient(135deg, #ef4444, #8b5cf6);
+}
+
+.music-button:active {
+    transform: translateY(0);
+}
+
+.music-button.playing {
+    animation: pulse-music 2s infinite;
+}
+
+@keyframes pulse-music {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.bg-radial-gradient-1 {
+    background: radial-gradient(circle at 20% 30%, rgba(220, 38, 38, 0.1) 0%, transparent 50%);
+}
+
+.bg-radial-gradient-2 {
+    background: radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+}

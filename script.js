@@ -381,3 +381,29 @@ document.addEventListener('mousemove', (e) => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const music = document.getElementById("bg-music");
+    const musicButton = document.getElementById("music-toggle");
+    const musicText = document.getElementById("music-text");
+    let isPlaying = false;
+
+    function toggleMusic() {
+        if (isPlaying) {
+            music.pause();
+            musicButton.classList.remove('playing');
+            musicText.textContent = 'Play Music';
+            isPlaying = false;
+        } else {
+            music.play().catch(e => {
+                console.log('Audio play failed:', e);
+                alert('Unable to play audio. Please check if the audio file exists.');
+            });
+            musicButton.classList.add('playing');
+            musicText.textContent = 'Pause Music';
+            isPlaying = true;
+        }
+    }
+
+    musicButton.addEventListener('click', toggleMusic);
+});
